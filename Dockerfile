@@ -14,9 +14,9 @@ RUN go build -o main .
 
 FROM gcr.io/distroless/base
 
-COPY --from=stage /app/main .
+COPY --from=master /app/main .
 
-COPY --from=stage /app/static ./static
+COPY --from=master /app/static ./static
 
 EXPOSE 8080
 
