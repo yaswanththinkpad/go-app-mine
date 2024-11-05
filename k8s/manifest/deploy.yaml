@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go_deploy
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go
+  template:
+    metadata:
+      labels:
+        app: go
+  spec:
+    containers:
+    - name: go_container
+      image: yaswanththinkpad759/go_lang:v1
+      ports:
+      - name: go_port
+        containerPort: 8080
